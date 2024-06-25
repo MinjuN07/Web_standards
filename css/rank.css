@@ -1,0 +1,63 @@
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #202020;
+	color: #ffffff;
+	margin: 0;
+	padding: 20px;
+}
+
+header {
+	background: #333333;
+	padding: 10px 20px;
+	text-align: center;
+}
+
+form {
+	display: flex;
+	justify-content: center;
+	margin: 20px auto;
+	width: 80%;
+}
+
+input,
+select {
+	padding: 10px;
+	margin-right: 10px;
+	background: #444444;
+	border: 1px solid #555555;
+	border-radius: 5px;
+	color: white;
+}
+
+.centered {
+	text-align: center;
+	margin-top: 20px;
+}
+#results {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	padding: 10px;
+}
+
+.movie {
+	width: 18%; /* 한 줄에 5개 영화를 표시하기 위해 100% / 5 */
+	margin: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	background-color: #333;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.movie img {
+	width: 100%;
+	height: auto;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.movie h3,
+.movie p {
+	margin: 10px;
+}

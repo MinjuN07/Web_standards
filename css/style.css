@@ -1,0 +1,129 @@
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100vh;
+	overflow-y: scroll; /* 스크롤 기능을 유지 */
+}
+
+body::-webkit-scrollbar {
+	width: 0; /* 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+	background: transparent; /* 스크롤바 배경 숨기기 */
+}
+
+body {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+header {
+	background-color: #333;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	position: fixed;
+	width: 100%;
+	z-index: 10;
+}
+
+header .logo {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-left: 100px; /* 추가 */
+}
+
+header nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	margin-right: 100px; /* 추가 */
+}
+
+header nav ul li {
+	margin-left: 1em;
+}
+
+header nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.hero {
+	position: relative;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	text-align: center;
+	overflow: hidden;
+}
+
+#hero-video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: translate(-50%, -50%);
+	z-index: -1;
+	filter: blur(5px); /* 비디오 블러 처리 */
+}
+
+.hero-content button {
+	padding: 0.5em 1em;
+	font-size: 1.5em;
+	background-color: #fff;
+	color: #333;
+	border: none;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+.hero-content button:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+#video-control-button {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	padding: 0.5em 1em;
+	font-size: 1em;
+	background-color: #fff;
+	color: #333;
+	border: none;
+	cursor: pointer;
+	border-radius: 8px;
+}
+
+#video-control-button:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+.content {
+	padding: 2em;
+	text-align: center;
+}
+
+.content h2 {
+	font-size: 2em;
+	margin-bottom: 1em;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	padding: 1em 0;
+	position: relative;
+	width: 100%;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<title>박스오피스 정보</title>
+		<link rel="stylesheet" href="./css/rank.css" />
+	</head>
+	<body>
+		<header>
+			<h1>박스오피스 조회</h1>
+		</header>
+		<section>
+			<form id="searchForm">
+				<input type="date" id="targetDate" required />
+				<select id="movieType">
+					<option value="0">주간</option>
+					<option value="1">주말</option>
+					<option value="2">주중</option>
+				</select>
+				<select id="nationType">
+					<option value="K">한국 영화</option>
+					<option value="F">외국 영화</option>
+				</select>
+			</form>
+		</section>
+		<section id="results" class="centered"></section>
+		<script src="./js/index.js"></script>
+	</body>
+</html>
