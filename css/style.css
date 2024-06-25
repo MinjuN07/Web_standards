@@ -32,7 +32,7 @@ header {
 header .logo {
 	font-size: 1.5em;
 	font-weight: bold;
-	margin-left: 100px; /* 추가 */
+	margin-left: 100px;
 }
 
 header nav ul {
@@ -40,7 +40,7 @@ header nav ul {
 	margin: 0;
 	padding: 0;
 	display: flex;
-	margin-right: 100px; /* 추가 */
+	margin-right: 100px;
 }
 
 header nav ul li {
@@ -73,7 +73,7 @@ header nav ul li a {
 	object-fit: cover;
 	transform: translate(-50%, -50%);
 	z-index: -1;
-	filter: blur(5px); /* 비디오 블러 처리 */
+	filter: blur(5px);
 }
 
 .hero-content button {
@@ -126,4 +126,115 @@ footer {
 	padding: 1em 0;
 	position: relative;
 	width: 100%;
+}
+
+/* 반응형 웹 디자인을 위한 미디어 쿼리 추가 */
+@media (max-width: 1200px) {
+	header .logo {
+		margin-left: 50px;
+	}
+
+	header nav ul {
+		margin-right: 50px;
+	}
+}
+
+@media (max-width: 992px) {
+	header {
+		flex-direction: column;
+	}
+
+	header .logo {
+		margin-left: 0;
+		margin-bottom: 1em;
+	}
+
+	header nav ul {
+		flex-direction: column;
+		align-items: center;
+		margin-right: 0;
+	}
+
+	header nav ul li {
+		margin-left: 0;
+		margin-bottom: 1em;
+	}
+
+	.hero-content button {
+		font-size: 1.2em;
+	}
+
+	#video-control-button {
+		bottom: 10px;
+		right: 10px;
+		font-size: 0.9em;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero {
+		height: 80vh;
+	}
+
+	.hero-content button {
+		font-size: 1em;
+		padding: 0.5em 0.8em;
+	}
+
+	#video-control-button {
+		font-size: 0.8em;
+		padding: 0.5em 0.8em;
+	}
+
+	.content {
+		padding: 1.5em;
+	}
+
+	.content h2 {
+		font-size: 1.5em;
+	}
+}
+
+@media (max-width: 576px) {
+	header nav ul {
+		width: 100%;
+	}
+
+	header nav ul li {
+		width: 100%;
+		text-align: center;
+		margin-bottom: 0.5em;
+	}
+
+	.hero {
+		height: 70vh;
+	}
+
+	.hero-content button {
+		font-size: 0.9em;
+		padding: 0.4em 0.6em;
+	}
+
+	#video-control-button {
+		font-size: 0.7em;
+		padding: 0.4em 0.6em;
+	}
+
+	.content {
+		padding: 1em;
+	}
+
+	.content h2 {
+		font-size: 1.2em;
+	}
+}
+
+body::-webkit-scrollbar {
+	width: 0; /* 웹킷 기반 브라우저에서 스크롤바 숨기기 */
+	background: transparent; /* 스크롤바 배경 숨기기 */
+}
+
+body {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
 }

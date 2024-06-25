@@ -33,6 +33,7 @@ select {
 	text-align: center;
 	margin-top: 20px;
 }
+
 #results {
 	display: flex;
 	flex-wrap: wrap;
@@ -60,4 +61,60 @@ select {
 .movie h3,
 .movie p {
 	margin: 10px;
+}
+
+/* 반응형 웹 디자인을 위한 미디어 쿼리 추가 */
+@media (max-width: 1200px) {
+	form {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	input,
+	select {
+		width: 100%;
+		margin: 5px 0;
+	}
+
+	#results {
+		justify-content: center;
+	}
+
+	.movie {
+		width: 22%; /* 4개 열 */
+	}
+}
+
+@media (max-width: 992px) {
+	.movie {
+		width: 29%; /* 3개 열 */
+	}
+}
+
+@media (max-width: 768px) {
+	.movie {
+		width: 45%; /* 2개 열 */
+	}
+}
+
+@media (max-width: 576px) {
+	form {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	input,
+	select {
+		width: 100%;
+		margin: 5px 0;
+	}
+
+	.movie {
+		width: 90%; /* 1개 열 */
+	}
+
+	#results {
+		flex-direction: column;
+		align-items: center;
+	}
 }

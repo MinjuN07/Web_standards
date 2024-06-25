@@ -21,19 +21,19 @@ async function fetchData() {
 
 async function fetchBoxOffice(targetDt, weekGb, repNationCd) {
 	const apiKey = 'ea3da279020673d762e575c255ce24f7' // Kobis API 키
-	const itemPerPage = '50' // 한 번에 불러올 영화의 수
+	const itemPerPage = '10'
 	const url = `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=${apiKey}&targetDt=${targetDt}&weekGb=${weekGb}&repNationCd=${repNationCd}&itemPerPage=${itemPerPage}`
 
 	try {
 		const response = await fetch(url)
 		const data = await response.json()
 		if (data.faultInfo || !data.boxOfficeResult) {
-			displayErrorMessage('영화 데이터를 불러오는 데 실패했습니다. 나중에 다시 시도해 주세요. 혹은 날짜를 변경 해주세요.')
+			displayErrorMessage('영화 데이터를 불러오는 데 실패했습니다. 나중에 다시 시도해 주세요. 혹은 날짜를 변경 해주세요.') // 이해의 용이성 오류 발생 시 오류의 원인 파악 도움
 		} else {
 			displayResults(data)
 		}
 	} catch (error) {
-		displayErrorMessage('영화 데이터를 불러오는 데 실패했습니다. 나중에 다시 시도해 주세요. 혹은 날짜를 변경 해주세요.')
+		displayErrorMessage('영화 데이터를 불러오는 데 실패했습니다. 나중에 다시 시도해 주세요. 혹은 날짜를 변경 해주세요.') // 이해의 용이성 오류 발생 시 오류의 원인 파악 도움
 	}
 }
 
@@ -72,7 +72,7 @@ async function displayResults(data) {
 	if (data.boxOfficeResult && data.boxOfficeResult.weeklyBoxOfficeList.length > 0) {
 		const movies = data.boxOfficeResult.weeklyBoxOfficeList
 		for (const movie of movies) {
-			const { imageUrl, altText } = await fetchMovieImage(movie.movieNm) // 영화 이름을 사용하여 이미지와 alt 텍스트 검색
+			const { imageUrl, altText } = await fetchMovieImage(movie.movieNm) // 인식의 용이성 영화 이름을 사용하여 이미지와 alt 텍스트 검색 -> alt 마크업 제공
 			const movieEl = document.createElement('div')
 			movieEl.classList.add('movie')
 			movieEl.innerHTML = `
@@ -83,7 +83,7 @@ async function displayResults(data) {
 			results.appendChild(movieEl)
 		}
 	} else {
-		results.innerHTML = '<p>영화 데이터를 불러오는 데 실패했습니다. 나중에 다시 시도해 주세요. 혹은 날짜를 변경 해주세요.</p>'
+		results.innerHTML = '<p>영화 데이터를 불러오는 데 실패했습니다. 나중에 다시 시도해 주세요. 혹은 날짜를 변경 해주세요.</p>' // 이해의 용이성 오류 발생 시 오류의 원인 파악 도움
 	}
 }
 
@@ -96,6 +96,7 @@ function toggleVideo() {
 	const videoControlButton = document.getElementById('video-control-button')
 
 	if (heroVideo.paused) {
+		// 운영의 용이성 동영상 정지 기능 제공
 		heroVideo.play()
 		videoControlButton.textContent = 'Pause'
 	} else {
